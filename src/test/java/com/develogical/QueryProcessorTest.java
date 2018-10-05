@@ -40,4 +40,9 @@ public class QueryProcessorTest {
     public void returnsPlusValue() throws Exception {
         assertThat(queryProcessor.process("bd531480: what is 5 plus 14"), containsString("19"));
     }
+
+    @Test
+    public void returnsMultipliedValue() throws Exception {
+        assertThat(queryProcessor.process("bcd22a50: what is 2 multiplied by 16"), containsString("32"));
+    }
 }

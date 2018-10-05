@@ -37,6 +37,21 @@ public class QueryProcessor {
                 }
                 return sum+"";
             }
+            else if(query.contains("multiplied")){
+                int multi = -1;
+                for (int i = 0; i < splited.length; i++) {
+                    try {
+                        double d = Double.parseDouble(splited[i]);
+                        if(multi == -1){
+                            multi = (int) d;
+                        }
+                        else{
+                            multi *= d;
+                        }
+                    } catch (NumberFormatException | NullPointerException nfe){}
+                }
+                return multi+"";
+            }
         }
         return "";
     }
