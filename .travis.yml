@@ -2,3 +2,7 @@ language: java
 jdk:
 - oraclejdk8
 script: mvn clean verify
+deploy:
+  provider: heroku
+  api_key: 0d4b403e-767a-47ac-97da-f2112aebe38f
+  app: horse-battery-666
