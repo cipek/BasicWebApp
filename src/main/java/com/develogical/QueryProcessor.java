@@ -11,6 +11,23 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("horse")) {
             return "battery";
         }
+        else{
+            String[] splited = query.split("\\s+");
+//            System.out.println(splited);
+            if(query.contains("largest")){
+                int max = 0;
+                for (int i = 0; i < splited.length; i++) {
+                    splited[i] = splited[i].replaceAll(",","");
+                    try {
+                        double d = Double.parseDouble(splited[i]);
+                        if(d > max)
+                            max = (int) d;
+                    } catch (NumberFormatException | NullPointerException nfe){}
+                }
+                return max+"";
+            }
+
+        }
         return "";
     }
 }

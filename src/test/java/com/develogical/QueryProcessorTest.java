@@ -29,4 +29,10 @@ public class QueryProcessorTest {
     public void knowsAboutHorse() throws Exception {
         assertThat(queryProcessor.process("Horse"), containsString("battery"));
     }
+
+
+    @Test
+    public void returnsLargestNumber() throws Exception {
+        assertThat(queryProcessor.process("d69e9640: which of the following numbers is the largest: 17, 412, 18"), containsString("412"));
+    }
 }
