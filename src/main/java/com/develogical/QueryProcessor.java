@@ -26,7 +26,17 @@ public class QueryProcessor {
                 }
                 return max+"";
             }
+            else if(query.contains("plus")){
+                int sum = 0;
+                for (int i = 0; i < splited.length; i++) {
+                    try {
+                        double d = Double.parseDouble(splited[i]);
 
+                        sum += (int) d;
+                    } catch (NumberFormatException | NullPointerException nfe){}
+                }
+                return sum+"";
+            }
         }
         return "";
     }

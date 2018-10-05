@@ -35,4 +35,9 @@ public class QueryProcessorTest {
     public void returnsLargestNumber() throws Exception {
         assertThat(queryProcessor.process("d69e9640: which of the following numbers is the largest: 17, 412, 18"), containsString("412"));
     }
+
+    @Test
+    public void returnsPlusValue() throws Exception {
+        assertThat(queryProcessor.process("bd531480: what is 5 plus 14"), containsString("19"));
+    }
 }
